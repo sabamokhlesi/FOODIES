@@ -1,0 +1,43 @@
+.header{
+    // background-color: $color-grey-dark-1;
+    background-image: linear-gradient(rgba($color-secondary,.9),rgba($color-secondary,.9)) , url(../img/hero.jpeg);
+    background-position: center;
+    background-size: cover;
+    padding: 8rem;
+    grid-column: full-start/col-end 6;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    h3{font-style: normal;}
+    &-logo{
+        height: 3rem;
+        align-self: center;
+    }
+    &-brands{
+        display: flex;
+        justify-content: space-around;
+        img{
+            max-height: 2.3rem;
+            max-width: 100%;
+            filter: opacity(.7);   
+        }
+    }
+    &-seenon-text{
+        margin-bottom: 1.5rem;
+        display: flex;
+        justify-content: space-between;
+        font-size: 1.7rem;
+        font-weight: 200;
+        color: $color-grey-light-2;
+        &::before,
+        &::after{
+            transform: translateY(1.5rem);
+            content: "";
+            width: 43%;
+            height: 1px;
+            display: block;
+            background-color: currentColor;
+            z-index: 20;
+        }
+    }
+}

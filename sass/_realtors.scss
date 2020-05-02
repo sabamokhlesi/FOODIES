@@ -1,0 +1,31 @@
+.realtors{
+    background-color: $color-secondary;
+    grid-column: col-start 7/full-end;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    h3{font-style: normal;text-align: center;}
+}
+.realtor{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-right: 3rem;
+    &-img{
+        width: 7.5rem;
+        height: 7.5rem;
+        border-radius: 200px;
+        padding: 2.5vh;
+    }
+    &-name{
+        color: $color-grey-light-1;
+        font-size: 2rem;
+    }
+    &-number{
+        color: $color-grey-light-2;
+        font-size: 1.1rem;
+        font-weight: 100;
+        text-transform: uppercase;
+    }
+
+}

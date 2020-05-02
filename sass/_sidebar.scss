@@ -1,0 +1,39 @@
+.sidebar{
+    background-color: $color-primary;
+    grid-column: sidebar-start/sidebar-end;
+    grid-row: 1/-1;
+    @media only screen and (max-width:$bp-large) {
+        grid-column: 1/-1;
+        grid-row: 1/2;
+    }
+    position: relative;
+}
+
+.nav-btn{
+    position: absolute;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    border-radius: 0;
+    background-color: #fff;
+    height: 3px;
+    width: 4.5rem;
+    top: 4rem;
+    left: 1.5rem;
+    @media only screen and (max-width:$bp-large) {
+        top: 2.8rem;
+        right: 1.5rem;
+        &::before{transform: translateY(-1rem);}
+        &::after{transform: translateY(.7rem);}
+    }
+    &::before,
+    &::after{
+        background-color: #fff;
+        height: 3px;
+        width: 4.5rem;
+        content: "";
+        display: block;
+    }
+    &::before{transform: translateY(-1.3rem);}
+    &::after{transform: translateY(1rem);}
+}
