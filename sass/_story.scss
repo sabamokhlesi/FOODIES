@@ -2,31 +2,52 @@
     &-pictures{
         background-color: burlywood;
         grid-column: full-start / col-end 4;
+        overflow: hidden;
+        @media only screen and (max-width:$bp-medium) {
+            grid-column: full-start / full-end;
+        }
         display: grid;
         grid-template-columns: repeat(6,1fr);
         grid-template-rows: repeat(6,1fr);
         align-items: center;
         background-image:linear-gradient(rgba($color-primary,.5),rgba($color-primary,.5)),url(../img/back.jpg);
+        background-position: center;
+        background-size: cover;
     }
     &-img-1{
+        overflow: hidden;
         width: 100%;
         grid-area: 2/2/6/6; 
         box-shadow: 0 2rem 5rem rgba(0, 0, 0, 0.116);
+        @media only screen and (max-width:$bp-medium) {
+            grid-area: 2/2/6/5;
+            width: 120%;
+            transform: translateX(-3.5rem);
+            }
     }
     &-img-2{
+        overflow: hidden;
         z-index: 10;
         width: 115%;
         grid-area: 4/4/7/7;  
-        box-shadow: 0 2rem 5rem rgba(0, 0, 0, 0.116); 
+        box-shadow: 0 2rem 5rem rgba(0, 0, 0, 0.116);
+        @media only screen and (max-width:$bp-medium) {
+            grid-area: 2/4/6/7;
+            width: 90%;
+            } 
        }
     &-content{
-       background-color:$color-grey-light-1;
+        background-color:$color-grey-dark-medium;
        grid-column: col-start 5 / full-end;
        padding: 6rem 8vw;
        display: flex;
        flex-direction: column;
        align-items: center;
        justify-content: center;
+       text-align: center;
+       @media only screen and (max-width:$bp-medium) {
+        grid-column: full-start / full-end;
+        }
     }
     &-text{
         font-size: 1.5rem;

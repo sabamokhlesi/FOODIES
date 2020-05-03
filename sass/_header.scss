@@ -5,6 +5,12 @@
     background-size: cover;
     padding: 8rem;
     grid-column: full-start/col-end 6;
+    @media only screen and (max-width:$bp-medium) {
+        grid-column: full-start/full-end;
+        background-attachment: fixed;
+        padding:8rem 6rem;
+    }
+    @media only screen and (max-width:$bp-smaller) {padding:6rem 4rem;}
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -19,7 +25,8 @@
         img{
             max-height: 2.3rem;
             max-width: 100%;
-            filter: opacity(.7);   
+            filter: opacity(.7);
+            @media only screen and (max-width:$bp-smaller) {max-height: 1.5rem;}   
         }
     }
     &-seenon-text{
@@ -38,6 +45,7 @@
             display: block;
             background-color: currentColor;
             z-index: 20;
+            @media only screen and (max-width:$bp-smaller) {width: 38%;}
         }
     }
 }

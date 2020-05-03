@@ -4,13 +4,31 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
+    @media only screen and (max-width:$bp-small) {padding: 4rem 2rem;}
+    
+    &-group{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        @media only screen and (max-width:$bp-medium) {flex-direction: row; }
+        @media only screen and (max-width:$bp-small) {justify-content: space-evenly;}
+    }
+    
     h3{font-style: normal;text-align: center;}
+    @media only screen and (max-width:$bp-medium) {
+        grid-column: full-start/full-end;
+    }
 }
 .realtor{
     display: flex;
     align-items: center;
     justify-content: center;
     padding-right: 3rem;
+    @media only screen and (max-width:$bp-small) {
+        flex-direction: column;
+        justify-content: space-around;
+        padding-right: 0;
+    }
     &-img{
         width: 7.5rem;
         height: 7.5rem;

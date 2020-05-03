@@ -28,6 +28,10 @@ body {
     .container {
       grid-template-columns: [full-start] minmax(6rem, 1fr) [center-start] repeat(8, [col-start] minmax(min-content, 14rem) [col-end]) [center-end] minmax(6rem, 1fr) [full-end];
       grid-template-rows: 6rem 80vh min-content 40vw repeat(3, min-content); } }
+  @media only screen and (max-width: 50em) {
+    .container {
+      grid-template-columns: [full-start] minmax(6rem, 1fr) [center-start] repeat(8, [col-start] minmax(min-content, 14rem) [col-end]) [center-end] minmax(6rem, 1fr) [full-end];
+      grid-template-rows: 6vh 94vh minmax(min-content, 20rem) min-content minmax(min-content, 60vw) minmax(min-content, 60vw) repeat(3, min-content); } }
 
 .heading-4, .heading-3, .heading-2, .heading-1 {
   font-family: "Josefin Sans", sans-serif;
@@ -58,7 +62,12 @@ body {
 .heading-1 {
   color: beige;
   font-size: 5rem;
-  margin-bottom: 2rem; }
+  margin-bottom: 2rem;
+  margin-top: 1rem; }
+  @media only screen and (max-width: 31em) {
+    .heading-1 {
+      font-size: 4rem;
+      margin-top: 2rem; } }
 
 .btn {
   background-color: #c69963;
@@ -135,6 +144,14 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: space-between; }
+  @media only screen and (max-width: 50em) {
+    .header {
+      grid-column: full-start/full-end;
+      background-attachment: fixed;
+      padding: 8rem 6rem; } }
+  @media only screen and (max-width: 31em) {
+    .header {
+      padding: 6rem 4rem; } }
   .header h3 {
     font-style: normal; }
   .header-logo {
@@ -147,6 +164,9 @@ body {
       max-height: 2.3rem;
       max-width: 100%;
       filter: opacity(0.7); }
+      @media only screen and (max-width: 31em) {
+        .header-brands img {
+          max-height: 1.5rem; } }
   .header-seenon-text {
     margin-bottom: 1.5rem;
     display: flex;
@@ -162,6 +182,9 @@ body {
       display: block;
       background-color: currentColor;
       z-index: 20; }
+      @media only screen and (max-width: 31em) {
+        .header-seenon-text::before, .header-seenon-text::after {
+          width: 38%; } }
 
 .realtors {
   background-color: #101d2c;
@@ -169,15 +192,36 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center; }
+  @media only screen and (max-width: 42em) {
+    .realtors {
+      padding: 4rem 2rem; } }
+  .realtors-group {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; }
+    @media only screen and (max-width: 50em) {
+      .realtors-group {
+        flex-direction: row; } }
+    @media only screen and (max-width: 42em) {
+      .realtors-group {
+        justify-content: space-evenly; } }
   .realtors h3 {
     font-style: normal;
     text-align: center; }
+  @media only screen and (max-width: 50em) {
+    .realtors {
+      grid-column: full-start/full-end; } }
 
 .realtor {
   display: flex;
   align-items: center;
   justify-content: center;
   padding-right: 3rem; }
+  @media only screen and (max-width: 42em) {
+    .realtor {
+      flex-direction: column;
+      justify-content: space-around;
+      padding-right: 0; } }
   .realtor-img {
     width: 7.5rem;
     height: 7.5rem;
@@ -218,31 +262,52 @@ body {
 .story-pictures {
   background-color: burlywood;
   grid-column: full-start / col-end 4;
+  overflow: hidden;
   display: grid;
   grid-template-columns: repeat(6, 1fr);
   grid-template-rows: repeat(6, 1fr);
   align-items: center;
-  background-image: linear-gradient(rgba(198, 153, 99, 0.5), rgba(198, 153, 99, 0.5)), url(../img/back.jpg); }
+  background-image: linear-gradient(rgba(198, 153, 99, 0.5), rgba(198, 153, 99, 0.5)), url(../img/back.jpg);
+  background-position: center;
+  background-size: cover; }
+  @media only screen and (max-width: 50em) {
+    .story-pictures {
+      grid-column: full-start / full-end; } }
 
 .story-img-1 {
+  overflow: hidden;
   width: 100%;
   grid-area: 2/2/6/6;
   box-shadow: 0 2rem 5rem rgba(0, 0, 0, 0.116); }
+  @media only screen and (max-width: 50em) {
+    .story-img-1 {
+      grid-area: 2/2/6/5;
+      width: 120%;
+      transform: translateX(-3.5rem); } }
 
 .story-img-2 {
+  overflow: hidden;
   z-index: 10;
   width: 115%;
   grid-area: 4/4/7/7;
   box-shadow: 0 2rem 5rem rgba(0, 0, 0, 0.116); }
+  @media only screen and (max-width: 50em) {
+    .story-img-2 {
+      grid-area: 2/4/6/7;
+      width: 90%; } }
 
 .story-content {
-  background-color: #f9f7f6;
+  background-color: #f1e9e4;
   grid-column: col-start 5 / full-end;
   padding: 6rem 8vw;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center; }
+  justify-content: center;
+  text-align: center; }
+  @media only screen and (max-width: 50em) {
+    .story-content {
+      grid-column: full-start / full-end; } }
 
 .story-text {
   font-size: 1.5rem;
@@ -254,6 +319,9 @@ body {
   margin: 15rem 0;
   grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
   grid-gap: 7rem; }
+  @media only screen and (max-width: 50em) {
+    .homes {
+      margin: 10rem 0; } }
 
 .home {
   background-color: #f1e9e4;
@@ -305,6 +373,11 @@ body {
   display: grid;
   grid-template: repeat(7, 5vw)/repeat(8, 1fr);
   grid-gap: 1.5rem; }
+  @media only screen and (max-width: 50em) {
+    .gallery {
+      grid-gap: 1.3rem;
+      padding: 1.3rem;
+      grid-template: repeat(7, 10vw)/repeat(8, 1fr); } }
   .gallery-img {
     width: 100%;
     height: 100%;
