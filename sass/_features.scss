@@ -1,31 +1,37 @@
-.features{
-    grid-column: center-start/center-end;
+.steps{
+    grid-column: 1/-1;
+    text-align: center;
+    background-image: url(../img/register-5.jpg);
+    background-position: bottom left;
+    background-size: cover;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(28rem,1fr));
-    margin:15rem 0;
-    grid-gap: 6rem;
-    align-items: start;
-    
-}
-
-.feature{
-    display: grid;
-    grid-column-gap: 2.5rem;
-    grid-row-gap: 1.5rem;
-    grid-template-columns: min-content 1fr;
-    
-    &-icon{
-        fill: $color-primary;
-        width: 4.5rem;
-        height: 4.5rem;
-        grid-row: 1/ span 2;
-        transform: translateY(-1rem);
-        
-    }
+    grid-template-columns: repeat(10,1fr);
+    padding-bottom: 25rem;
+    @media only screen and (max-width:$bp-small) {padding-bottom: 23rem;}
     &-text{
-        font-size: 1.7rem;
-        text-align: justify;
+        grid-column: 3/9;
+        grid-row: 1/2;
+        margin: 0 auto 3rem auto;
+        width: 60%;
+        h3{color: $color-primary;}
+        @media only screen and (max-width:$bp-large) {width: 80%;}
+        @media only screen and (max-width:$bp-medium) {grid-column: 2/10; margin-bottom: 0; width: 100%;}
     }
-    // grid-row: ;
-    // grid-column:;
+    &-cards{
+        grid-column: 3/9;
+        grid-row: 2/3;
+        display: flex;
+        justify-content: space-between;
+        i{
+            margin:3rem 0;
+            @media only screen and (max-width:$bp-small) {margin: 1rem;}
+        }
+        justify-self: center;
+        @media only screen and (max-width:$bp-larger) {
+            grid-column: 2/10;
+            justify-content: space-evenly;
+        }
+        @media only screen and (max-width:$bp-medium) {grid-column: 1/11;}
+        @media only screen and (max-width:$bp-small) {flex-direction: column;}
+    }
 }

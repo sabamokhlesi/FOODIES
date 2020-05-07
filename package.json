@@ -1,7 +1,7 @@
 {
-  "name": "Nexter",
+  "name": "FOODIES",
   "version": "1.0.0",
-  "description": "Nexter webpage",
+  "description": "A FOOD STARTUP LANDING PAGE",
   "main": "index.js",
   "scripts": {
     "watch:sass": "node-sass sass/main.scss css/style.css -w",

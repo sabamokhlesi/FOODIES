@@ -1,0 +1,15 @@
+.information{
+    display: flex;
+    justify-content: space-between;
+    grid-column: 3/7;
+    text-align: center;
+    padding: 4rem 0 10rem 0;
+    h3{padding-top: .5rem;}
+    i{margin:0 3rem;}
+    @media only screen and (max-width:$bp-larger) {
+        grid-column: 2/8;
+        justify-content: space-evenly;
+    }
+    @media only screen and (max-width:$bp-medium) {grid-column: 1/9; padding:5rem 0;}
+    @media only screen and (max-width:$bp-small) {flex-direction: column; padding-top: 4rem;}
+}

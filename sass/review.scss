@@ -1,0 +1,74 @@
+.review{
+    grid-column: 1/-1;
+    padding:5rem 10rem;
+    display: grid;
+    grid-template-columns: repeat(10,1fr);
+    background-image: url(../img/review-back-3.jpg);
+    background-position: left;
+    background-size: cover;
+    @media only screen and (max-width:$bp-small) {padding:0 5rem 5rem 5rem;}
+    i{
+        color: $color-primary;
+        margin: 2rem auto;
+    }
+    &-header{
+        margin: 3rem auto;
+        grid-column: 4/8;
+        h3{color: $color-primary;}
+        text-align: center;
+        @media only screen and (max-width:$bp-largest) {grid-column: 3/9;}
+        @media only screen and (max-width:$bp-medium) {grid-column: 1/-1; padding: 0;}
+    }
+    &-box{
+        
+        background-color: rgba(255, 255, 255, 0.89);
+        width: 100%;
+        padding: 2rem 5rem;
+        box-shadow: $shadow-light;
+        margin-bottom: 5rem;
+        text-align: center;
+        transition: all .5s;
+        border-radius:0 40px;
+        @media only screen and (max-width:$bp-small) {padding: 1.5rem 2.5rem;}
+    }
+    &-shape{
+        width: 12rem;
+        height: 12rem;
+        clip-path: circle(50% at 50% 50%);
+        position: relative;
+        margin: 0 auto 2rem auto;
+        transition: all .5s;
+        &:hover .review-caption{
+            opacity: 1;
+            transform: translate(-50% , -50%)scale(1.3);
+        }
+        &:hover .review-img{
+            filter: brightness(.6) blur(3px);
+        }
+        
+    }
+    &-img{
+        height: 100%;
+        transition: all .5s;
+    }
+    &-caption{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50% , 0%);
+        opacity: 0;
+        color: white;
+        text-align: center;
+        transition: all .5s;
+
+    }
+    
+}
+
+.reviews{
+    grid-column: 6/10;
+    @media only screen and (max-width:$bp-medium) {grid-column: 5/10;}
+    @media only screen and (max-width:$bp-small) {grid-column: 1/10;}
+}
+
+
